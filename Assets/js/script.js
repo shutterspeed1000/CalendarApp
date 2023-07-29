@@ -36,7 +36,7 @@ $(function () {
 });
 
 // select all IDs with hour, compare data hour with current hour.  Set class based on comp.  Make loop
-var currenthr = 9
+var currenthr = 13
 var slot = $('#hour').attr(`data-hour`)
 
 $(document).ready(function () {
@@ -48,20 +48,21 @@ $(document).ready(function () {
     console.log(slotTime.hour)
 
 if (currenthr == slotTime.hour){
-  $('div[data="slotTime"]').addClass('row time-block present')
+  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block present');
 }
-if (currenthr > slotTime.hour){
-  $('div["data-hour = ${slotTime.data}"]').addClass('row time-block past')
+if (currenthr < slotTime.hour){
+  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block future');
 }
- if (currenthr < slotTime.hour){
-  $('div["data-hour = ${slotTime.hour}"]').addClass('row time-block past')
+
+ if (currenthr > slotTime.hour){
+  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block past');
 }
 
 return slotTime
   });
 });
 
-var item = slotTime
+
 
 
 
