@@ -1,68 +1,62 @@
 // install Day.js to page
-dayjs().format()
+dayjs().format();
 
 //Set hour for color changes
-var currentHour = dayjs().format(`H`)
+var currenthr = dayjs().format(`H`);
 
 //display current day on site
-$(`#currentDay`).text(dayjs().format(`dddd, MMMM D`))
+$(`#currentDay`).text(dayjs().format(`dddd, MMMM D`));
 
+// run color and data settings after main page loads
 
-{/* <div id="hour-9" class="row time-block past"> */}
+$(document).ready(function(){
+setColor()
 
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
-
- 
-
-
-});
+}
+)
 
 // select all IDs with hour, compare data hour with current hour.  Set class based on comp.  Make loop
-var currenthr = 13
-var slot = $('#hour').attr(`data-hour`)
 
-$(document).ready(function () {
-  // Select all elements with ID "hour" using the attribute selector
-  $('[id="hour"]').each(function () {
-    // Retrieve all data attributes of the current element and store them in an object
-    var slotTime = $(this).data();
-    
-    console.log(slotTime.hour)
+function setColor() {
+  $(document).ready(function () {
+    $('[id="hour"]').each(function () {
+      var slotTime = $(this).data();
+  
+  // Get day info from localstorage
 
-if (currenthr == slotTime.hour){
-  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block present');
-}
-if (currenthr < slotTime.hour){
-  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block future');
-}
+      $('div[data-hour="' + slotTime.hour + '"]').find("textarea").text(localStorage.getItem(slotTime.hour))
 
- if (currenthr > slotTime.hour){
-  $('div[data-hour="' + slotTime.hour + '"]').addClass('row time-block past');
-}
 
-return slotTime
+      console.log(slotTime.hour);
+
+      if (currenthr == slotTime.hour) {
+        $('div[data-hour="' + slotTime.hour + '"]').addClass(
+          "row time-block present"
+        );
+      }
+      if (currenthr < slotTime.hour) {
+        $('div[data-hour="' + slotTime.hour + '"]').addClass(
+          "row time-block future"
+        );
+      }
+
+      if (currenthr > slotTime.hour) {
+        $('div[data-hour="' + slotTime.hour + '"]').addClass(
+          "row time-block past"
+        );
+      }
+    });
   });
-});
+}
 
 
 
+//Save data when button pushed
+$('button').click(function () {
+  // Get the content of the textarea
+  var dataSlot = $(this).closest('div').attr(`data-hour`)
+  var dataEntry = $(this).closest('div').children('textarea').val()
+localStorage.setItem(dataSlot,dataEntry)
+})
 
 
