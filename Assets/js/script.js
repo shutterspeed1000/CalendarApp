@@ -26,7 +26,6 @@ function setColor() {
         .find("textarea")
         .text(localStorage.getItem(slotTime.hour));
 
-      console.log(slotTime.hour);
 
       if (currenthr == slotTime.hour) {
         $('div[data-hour="' + slotTime.hour + '"]').addClass(
@@ -55,3 +54,14 @@ $("button").click(function () {
   var dataEntry = $(this).closest("div").children("textarea").val();
   localStorage.setItem(dataSlot, dataEntry);
 });
+
+//Clear all data for the day
+$("#clear").click(function () {
+var clearData = confirm("Are you sure you wish to clear all items?")
+if (clearData == true){
+  localStorage.clear()
+  setColor()
+}
+
+
+})

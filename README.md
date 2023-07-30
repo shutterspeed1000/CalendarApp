@@ -48,29 +48,25 @@ Based on sample video
 Technology used based on class materal:
 
 - objects
-- click and form events
-- getElementsByID
+- Jquery
+- Jquery transversal
 - Interval timer
 - IF/Else
 - Operators
 - Functions
 - CSS
 - HTML
-- Regex on highscore form
-- innerHTML
-- setAttributes
 
 ## Link to live site
 
-<https://shutterspeed1000.github.io/TimedQuiz/>
+<https://shutterspeed1000.github.io/CalendarApp/>
 
 ## Screenshots
 
-![screenshot of live site](assets/images/timequiz-ss.png)
+![Screenshot of application](Assets/Images/CalAppSS.png)
 
 ## Credits
 
-Information on regex used on highscore form <https://www.youtube.com/watch?v=wNdx7j6CpHo>
 
 ## License
 
