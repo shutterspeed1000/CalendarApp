@@ -23,6 +23,7 @@ THEN the saved events persist
 - [Features](#features)
 - [Link to live site](#link-to-live-site)
 - [Screenshots](#screenshots)
+- [Credits](#credits)
 - [License](#license)
 
 ## Features
@@ -57,6 +58,10 @@ Technology used based on class materal:
 ## Screenshots
 
 ![Screenshot of application](Assets/Images/CalAppSS.png)
+
+## Credits
+
+W3Schools - Fade techniques https://www.w3schools.com/jquery/jquery_fade.asp
 
 ## License
 
