@@ -23,34 +23,27 @@ THEN the saved events persist
 - [Features](#features)
 - [Link to live site](#link-to-live-site)
 - [Screenshots](#screenshots)
-- [Credits](#credits)
 - [License](#license)
 
 ## Features
 
 Site contains the following requieremts based on the Acceptance Criteria:
 
-- A start button that starts the quiz and timer
-- All questions are asked
-- When a question is answered correctly, the next question appears
-- Incorrect answers result in a 10 second penalty and is subtracted from the clock
-- Quiz is over when all questions are answer or the timer runs out.
-- If you are the new high score, you can enter your initals
-
-Based on sample video
-
-- Timer is shown in corner durring quiz
-- Highscore button is avaible to view current high score
-- Highscore can be reset if desired
-- Buttons respond to hover before being selected
-- Page is responsive in design
+- Page loads planner and shows any data stored locally
+- Current day is at the top of the screen
+- Blocks show hours from 9 to 5
+- Time is colocodes and changes based on time from date.js
+- Items can be entered into the blocks and saved by clikcing the button
+- Messages is shown when data is saved
+- Data presistes when page is refreshed
 
 Technology used based on class materal:
 
 - objects
 - Jquery
+- this
+- loop
 - Jquery transversal
-- Interval timer
 - IF/Else
 - Operators
 - Functions
@@ -64,9 +57,6 @@ Technology used based on class materal:
 ## Screenshots
 
 ![Screenshot of application](Assets/Images/CalAppSS.png)
-
-## Credits
-
 
 ## License
 
